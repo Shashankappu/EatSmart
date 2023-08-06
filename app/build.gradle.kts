@@ -62,4 +62,6 @@ dependencies {
 
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
+
+    implementation ("com.airbnb.android:lottie:6.0.1")
 }
