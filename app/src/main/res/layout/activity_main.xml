@@ -6,9 +6,22 @@
     android:layout_height="match_parent"
     android:background="@color/blue_shade_1"
     tools:context=".MainActivity">
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/diet_background"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EatSmart"
+            android:textSize="26sp"
+            android:fontFamily="@font/berkshireswash"
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVItems"
+        android:layout_below="@id/toolbar"
         tools:listitem="@layout/calorie_rv_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -18,11 +31,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:src="@drawable/plus"
         android:layout_alignParentRight="true"
-        android:backgroundTint="@color/blue_shade_2"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/diet_background"
+        android:src="@drawable/plus" />
 
     
 
