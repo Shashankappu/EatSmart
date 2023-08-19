@@ -3,7 +3,6 @@ package com.shashanksp.eatsmart
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -59,10 +58,12 @@ class MainActivity : AppCompatActivity(),CalorieRVAdapter.CalorieItemClickInterf
         val itemNameEdt = dialog.findViewById<EditText>(R.id.idEditItemName)
         val itemQuantityEdt = dialog.findViewById<EditText>(R.id.idEditItemQuantity)
         val itemCalEdt = dialog.findViewById<EditText>(R.id.idEditItemCals)
-        Log.d("yenoaythu","ille ille")
+
+
         cancelBtn.setOnClickListener {
             dialog.dismiss()
         }
+
         addBtn.setOnClickListener{
             val itemName : String = itemNameEdt.text.toString()
             val itemQuantiy : String = itemQuantityEdt.text.toString()
@@ -70,13 +71,15 @@ class MainActivity : AppCompatActivity(),CalorieRVAdapter.CalorieItemClickInterf
 
             val qty : Int = itemQuantiy.toInt()
             val cals : Int = itemCals.toInt()
+
             if(itemName.isNotEmpty() && itemCals.isNotEmpty() && itemQuantiy.isNotEmpty()){
                 val items  = CalorieItems(itemName,qty,cals)
                 calorieViewModel.insert(items)
                 Toast.makeText(applicationContext,"Item Added ",Toast.LENGTH_SHORT).show()
                 calorieRVAdapter.notifyDataSetChanged()
                 dialog.dismiss()
-            }else{
+            }
+            else{
                 Toast.makeText(applicationContext,"Please Enter all the details",Toast.LENGTH_SHORT).show()
             }
         }
